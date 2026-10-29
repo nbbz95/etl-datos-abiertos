@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ETL datos abiertos</title>
+  <meta name="description" content="Pipeline ETL con DuckDB y SQL sobre datos abiertos de Argentina.">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<main>
+  <h1>ETL de datos abiertos de Argentina</h1>
+  <p class="sub">Pipeline que cruza inflación, dólar oficial, dólar blue y riesgo país en un warehouse DuckDB, con modelos y tests en SQL. Generado el {{GENERADO}}.</p>
+  <pre class="flujo">extract (API ArgentinaDatos) → load (DuckDB raw_*) → staging (stg_*) → marts (fct_mensual) → tests → análisis</pre>
+  <p>Descargas: <a href="datos/fct_mensual.csv">fct_mensual.csv</a> · <a href="datos/fct_mensual.parquet">fct_mensual.parquet</a> · <a href="datos/warehouse.duckdb">warehouse.duckdb</a> · <a href="datos/analisis.json">analisis.json</a></p>
+  {{SECCIONES}}
+  <footer>Fuente: <a href="https://argentinadatos.com">ArgentinaDatos</a> (INDEC, BCRA, JP Morgan). <a href="https://github.com/nbbz95/etl-datos-abiertos">Código</a>.</footer>
+</main>
+</body>
+</html>
