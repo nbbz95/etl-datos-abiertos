@@ -1,7 +1,7 @@
 """Genera el sitio estático con los resultados de las consultas."""
 
 import html
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 
@@ -29,7 +29,7 @@ def generar(resultados, destino: Path, plantilla: Path):
 {tabla(r["columnas"], r["filas"])}
 <details><summary>Ver SQL</summary><pre><code>{html.escape(r["sql"])}</code></pre></details></section>"""
         )
-    fecha = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    fecha = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
     contenido = plantilla.read_text(encoding="utf-8").replace(
         "{{SECCIONES}}", "\n".join(secciones)
     )
